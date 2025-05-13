@@ -60,3 +60,19 @@ nbr1++;
 document.write(nbr1," incrémentation ", "<br>");
 nbr3--;
 document.write(nbr3," décrémentation ", "<br>");
+
+document.write("<h2>Les opérateurs affectation</h2>");
+document.write("les valeurs d'entrée de nbr1 et nbr 3 :", nbr1," ", nbr3, "<br>");
+nbr1+=nbr3;//nbr1 = nbr1 + nbr3
+document.write("la nouvelle valeur de nbr1 :", nbr1, "<br>");
+nbr1-=nbr3;//nbr1 = nbr1 - nbr3
+document.write("la nouvelle valeur de nbr1 :", nbr1, "<br>");
+nbr1*=nbr3;//nbr1 = nbr1 * nbr3
+document.write("la nouvelle valeur de nbr1 :", nbr1, "<br>");
+nbr1/=nbr3;//nbr1 = nbr1 / nbr3
+document.write("la nouvelle valeur de nbr1 :", nbr1, "<br>");
+nbr1%=nbr3;//nbr1 = nbr1 % nbr3
+document.write("la nouvelle valeur de nbr1 :", nbr1, "<br>");
+nbr1*=nbr3;//nbr1 = nbr1 * nbr3
+document.write("la nouvelle valeur de nbr1 :", nbr1, "<br>");
+document.write("les valeurs de sortie de nbr1 et nbr 3 :", nbr1," ", nbr3, "<br>");
