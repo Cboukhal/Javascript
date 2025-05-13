@@ -110,3 +110,7 @@ tr:hover {
   background-color: #dbe9ff;
   transition: background-color 0.3s ease;
 }
+
+b{
+    color: red;
+}
