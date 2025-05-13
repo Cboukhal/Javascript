@@ -12,21 +12,21 @@
         <h1>Javascript</h1>
         <p>    
             <ul><h3>SOMMAIRE</h3>
-                <a href="#intro"><li><h3>1.Introduction</h3></li></a>
-                <a href="#premier"><li><h3>2.Premier pas</h3></li></a>
-                <a href="#variables"><li><h3>3.Les variables</h3></li></a>
-                <a href="#navig"><li><h3>4.Action navigateur</h3></li></a>
-                <a href="#operateurs"><li><h3>5.Les opérateurs</h3></li></a>
-                <a href="#conversions"><li><h3>6.Les conversions</h3></li></a>
-                <a href="#cac"><h3>7.Les chaines de caractéres</h3></li></a>
-                <a href="#conditions"><li><h3>8.Les conditions</h3></li></a>
-                <a href="#boucles"><li><h3>9.Les boucles</h3></li></a>
-                <a href="#tableaux"><li><h3>10.Les tableaux</h3></li></a>
-                <a href="#fonctions"><li><h3>11.Les fonctions</h3></li></a>
-                <a href="#objets"><li><h3>12.Les objets</h3></li></a>
-                <a href="#DOM"><li><h3>13.Manipulations du DOM</h3></li></a>
-                <a href="#date"><li><h3>14.Dates et heure</h3></li></a>
-                <a href="#API"><li><h3>15.Les API</h3></li></a>
+                <a href="#intro"><li><h4>1.Introduction</h4></li></a>
+                <a href="#premier"><li><h4>2.Premier pas</h4></li></a>
+                <a href="#variables"><li><h4>3.Les variables</h4></li></a>
+                <a href="#navig"><li><h4>4.Action navigateur</h4></li></a>
+                <a href="#operateurs"><li><h4>5.Les opérateurs</h4></li></a>
+                <a href="#conversions"><li><h4>6.Les conversions</h4></li></a>
+                <a href="#cac"><h4>7.Les chaines de caractéres</h4></li></a>
+                <a href="#conditions"><li><h4>8.Les conditions</h4></li></a>
+                <a href="#boucles"><li><h4>9.Les boucles</h4></li></a>
+                <a href="#tableaux"><li><h4>10.Les tableaux</h4></li></a>
+                <a href="#fonctions"><li><h4>11.Les fonctions</h4></li></a>
+                <a href="#objets"><li><h4>12.Les objets</h4></li></a>
+                <a href="#DOM"><li><h4>13.Manipulations du DOM</h4></li></a>
+                <a href="#date"><li><h4>14.Dates et heure</h4></li></a>
+                <a href="#API"><li><h4>15.Les API</h4></li></a>
             </ul>
         </p>
     </header>
@@ -197,48 +197,102 @@
         </ul>
     <p>
         <b>NB</b> : On peut utiliser la fonction prédéfini <b>typeof</b> pour déterminer le type de valeur ou de variable.
-        <br><a href="./javascript.html">javascript.html</a>
+        <br>voir <a href="./javascript.html">javascript.html</a>
+    </p>
+    <h3>3.5Les Constantes</h3>
+    <p>
+        Une constante est un conteneur tout comme la variable mais sa valeur ne change jamais.
+    </p>
+        <ul class="Definition">exemple:
+            <li>PI</li>
+            <li>le nom d'un pays</li>
+            <li>la date de naissance d'un personne ...</li>
+        </ul>
+    <p>
+        voir <a href="./javascript.html">javascript.html</a>
     </p>
     </section>
 
     <section class="partie">
-    <h2>4.Action navigateur</h2>
-    <section class="Definition">
-    <h3>Définition</h3>
+    <h2 id="navig">4.Action navigateur</h2>
+    <h3>4.1 Instruction de lecture</h3>
     <p>
-    </p>
-    </section>
-    <h3></h3>
-    <p>     
-        <ul class="Definition">exemple:
-            <li></li>
+        <ul>
+            <li><b>Prompt()</b> permet de récupérer la saisie de l'utilisateur.</li>
+            <li><b>Confirm()</b> permet de récupérer une confirmation du nom de l'utilisateur</li>
         </ul>
+        </p><p>
+        voir <a href="./javascript.html">javascript.html</a>
     </p>
-    <h3></h3>
-    <p>
-        <ul class="Definition">exemple:
-            <li></li>
-        </ul>    
+    <h3>4.2 Instruction d'écriture</h3>
+    <p>     
+        <ul class="Definition">
+            <li><b>alert():</b> permet d'afficher un message à l'écran dans une fenêtre pop-up</li>
+            <li><b>document.write():</b> permet d'écrire sur la page HTML (obsoléte)</li>
+            <li><b>console.log():</b> permet d'écrire sur la console</li>
+        </ul>
     </p>
     </section>
     <section class="partie">
     <h2 id="operateurs">5. Les opérateurs</h2>
-    <section class="Definition">
-    <h3>Définition</h3>
+    <h3>5.1 Opérateurs de concaténation</h3>
     <p>
+        Le <b>+</b> et la <b>,</b> sont utilisés pour concaténer différentes valeurs en une seule sortie.
+        <br>le <b>+</b> est utilisé pour les fenêtres pop-up qui ne gèrent pas la virgule.
+        <br>la <b>,</b> est utilisé sur le document.write et la console.
     </p>
-    </section>
-    <h3></h3>
+    <h3>5.2 Les opératuers arithmétiques</h3>
     <p>     
-        <ul class="Definition">exemple:
-            <li></li>
-        </ul>
+        <table>
+            <tr>
+                <td>
+                    <b>+</b>:addition
+                </td>
+                <td>
+                    <b>-</b>:soustration
+                </td>
+                <td>
+                    <b>*</b>:multiplication
+                </td>
+                <td>
+                    <b>/</b>:division
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>%</b>:modulo
+                </td>
+                <td>
+                    <b>**</b>:puissance
+                </td>
+                <td>
+                    <b>++</b>:incrementation
+                </td>
+                <td>
+                    <b>--</b>:decrementation
+                </td>
+            </tr>
+        </table>
+        <p>
+            Voir <a href="./javascript.html">javascript.html</a>
+        </p>
     </p>
-    <h3></h3>
+    <h3>5.3 Opérateurs d'affectation</h3>
     <p>
-        <ul class="Definition">exemple:
-            <li></li>
-        </ul>    
+        <table>
+            <tr>
+                <td><b>=</b> affectation simple</td>
+                <td><b>+=</b> addition suivi d'affectation</td>
+                <td><b>-=</b> soustraction suivi d'affectation </td>
+            </tr>
+            <tr>
+                <td><b>/=</b>division suivi d'affectation</td>
+                <td><b>%=</b>modulo suivi d'affectation </td>
+                <td><b>*=</b>multiplication suivi d'affectation </td>
+            </tr>
+        </table>
+    </p><p>
+        Voir <a href="./javascript.html">javascript.html</a>
     </p>
     </section>
     <section class="partie">
