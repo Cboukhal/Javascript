@@ -98,8 +98,146 @@ document.write(c," : ", typeof(c), "<br>");
 c = String(c);
 document.write(c," : ", typeof(c), "<br>");
 
-document.write("<h3>Exercice</h3>");
+//------------------------------------les chaines de caractéres ------------------------------------//
+
+document.write("<h2>Les chaines de caractéres</h2>");
+let chaine = "le JS est un langage cool.";
+document.write(chaine, "<br>");
+document.write(chaine.toLowerCase(), " (toLowerCase)", "<br>");
+document.write(chaine.toUpperCase(), " (toUpperCase)","<br>");
+document.write(chaine.strike(), " (strike)","<br>");
+document.write(chaine.bold(), " (bold)","<br>");
+document.write(chaine.small(), " (small)","<br>");
+document.write(chaine.fontcolor("green"), " (fontcolor)","<br>");
+document.write(chaine.fontsize("2em"), " (fontsize)","<br>");
+document.write(chaine.length, " (length)","<br>");
+
+//------------------------------------les conditions ------------------------------------//
+document.write("<h2>Les conditions</h2>");
+e = 300;
+f = 200;
+if (e > f) //condition simple
+    document.write(e," supérieur à ",f,"<br>");
+e = 100;
+if (e > f) //condition alternative
+    document.write(e," supérieur à ",f,"<br>");
+ else
+    document.write(e," inférieur à ",f,"<br>");
+// if
+// {}
+// else
+// {}
+// let moyenne = prompt("Entrer votre moyenne");
+// if(moyenne < 0)
+//     alert("Moyenne impossible");
+// else if (moyenne < 10)
+//     alert("insuffisant");
+// else if (moyenne < 12)
+//     alert(moyenne+" passable");
+// else if (moyenne < 16)
+//     alert(moyenne+" bien");
+// else if (moyenne < 18)
+//     alert(moyenne+" excellent");
+// else if (moyenne <= 20)
+//     alert(moyenne+" FELICITATION");
+// else
+//     alert(moyenne + " tu triches");
+// if{}
+// else if{}
+// else{}
+// let civilite = prompt("Saisissez votre civilité Mr, MMme ...");
+// civilite = civilite.toLowerCase();
+// switch(civilite)
+// {
+//     case 'mr': 
+//     alert("Bonjour Monsieur");
+//                 break;
+//     case 'mme': 
+//     alert("Bonjour Madame");
+//                 break;
+//     case 'mlle': 
+//     alert("Bonjour Mademoiselle");
+//                 break;
+//     default :
+//         alert("Bonjour non-genré");
+// }
+
+//------------------------------------les boucles ------------------------------------//
+document.write("<h2>Les boucles</h2>");
+
+//------------------------------------les Exercices ------------------------------------//
+
+
+document.write("<h2>Exercice</h2>");
 // document.write("Ecrire un programme qui demande à l'user de sair son age et une confirmation de son age, envoie le message bienvenue si il a plus de 18ans ou accés refusé sinon et aurevoir s'il ne confirme pas son age","<br>");
 // let age = prompt("Saisiser votre age");//récupérer la saisie de l'user
 // let conf = confirm("Vous confirmez que vous avez bien " + age + " ans");
 // (conf == true)?alert((age>=18)?"Bienvenue":"accès refusé"):alert("Aurevoir");
+// document.write("Demander un programme qui demande a l'utilisateur de saisir un jour de la semaine et affiche par exemple: mardi est le 2 éme jour de la semaine.")
+// let date = prompt("Saisisser une journée dans la semaine");
+// jour = jour.toLowerCase();
+// if(date == "lundi")
+//     alert(date + " est le 1 er jour de la semaine.")
+// else if(date == "mardi")
+//     alert(date + " est le 2 éme jour de la semaine.")
+// else if(date == "mercredi")
+//     alert(date + " est le 3 éme jour de la semaine.")
+// else if(date == "jeudi")
+//     alert(date + " est le 4 éme jour de la semaine.")
+// else if(date == "vendredi")
+//     alert(date + " est le 5 éme jour de la semaine.")
+// else if(date == "samedi")
+//     alert(date + " est le 6 éme jour de la semaine.")
+// else if(date == "dimanche")
+//     alert(date + " est le 7 éme jour de la semaine.")
+// else
+//     alert(date + " n'est pas un jour dans la semaine.")
+// document.write("Ecrire le même le programme pour les mois de l'année comme pour les jours de la semaine mais avec un switch case");
+// let mois = prompt("Saisissez votre mois");
+// alert(typeof(mois));
+//     mois = mois.toLowerCase();
+//     console.log(mois);
+//     switch(mois)
+//     {
+//         case ('janvier'):
+//             case '1':
+//             alert("janvier est le 1er moi de l'année.");
+//             break;
+//         case ('février'):
+//             case '2':
+//             alert("février est le 1er moi de l'année.");
+//             break;
+//         case ('mars'):
+//             case '3':
+//             alert("mars est le 1er moi de l'année.");
+//             break;
+//         case ('avril'):
+//             alert("avril est le 1er moi de l'année.");
+//             break;
+//         case ('mai'):
+//             alert("mai est le 1er moi de l'année.");
+//             break;
+//         case ('juin'):
+//             alert("juin est le 1er moi de l'année.");
+//             break;
+//         case ('juillet'):
+//             alert("juillet est le 1er moi de l'année.");
+//             break;
+//         case ('aout'):
+//             alert("aout est le 1er moi de l'année.");
+//             break;
+//         case ('septembre'):
+//             alert("septembre est le 1er moi de l'année.");
+//             break;
+//         case ('octobre'):
+//             alert("octobre est le 1er moi de l'année.");
+//             break;
+//         case ('novembre'):
+//             alert("novembre est le 1er moi de l'année.");
+//             break;
+//         case ('décembre'):
+//             alert("décembre est le 1er moi de l'année.");
+//             break;
+//         default :
+//             alert(mois + " n'est un moi de l'année.");
+// }
