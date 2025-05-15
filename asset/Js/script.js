@@ -168,6 +168,11 @@ for(i = 0; i<10;i++)
 {
     document.write("i est égal au nombre de passage dans la boucle = ", i, "<br>");
 }
+document.write("<br>");
+for(i = 10; i>=0;i--)
+{
+    document.write("i est égal au nombre de passage dans la boucle = ", i, "<br>");
+}
 
 //------------------------------------les Exercices ------------------------------------//
 
