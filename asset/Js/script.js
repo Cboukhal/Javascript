@@ -262,6 +262,5 @@ for(i = 2; i<=100;i++){
             break;
     }
     if (j == i)
-       document.write(i, "<br>");
-    j=2; 
+       document.write(i," est un nombre premier", "<br>");
 }
