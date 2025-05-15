@@ -164,6 +164,10 @@ if (e > f) //condition alternative
 
 //------------------------------------les boucles ------------------------------------//
 document.write("<h2>Les boucles</h2>");
+for(i = 0; i<10;i++)
+{
+    document.write("i est égal au nombre de passage dans la boucle = ", i, "<br>");
+}
 
 //------------------------------------les Exercices ------------------------------------//
 
