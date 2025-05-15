@@ -166,11 +166,15 @@ if (e > f) //condition alternative
 document.write("<h2>Les boucles</h2>");
 for(i = 0; i<10;i++)
 {
+    if(i == 6)
+        break;
     document.write("i est égal au nombre de passage dans la boucle = ", i, "<br>");
 }
 document.write("<br>");
 for(i = 10; i>=0;i--)
 {
+    if(i == 8 || i == 4)
+        continue;
     document.write("i est égal au nombre de passage dans la boucle = ", i, "<br>");
 }
 
@@ -250,3 +254,14 @@ document.write("<h2>Exercice</h2>");
 //         default :
 //             alert(mois + " n'est un moi de l'année.");
 // }
+document.write("afficher les 100 premiers nombre premier","<br>");
+for(i = 2; i<=100;i++){
+    for(j=2;j<=i;j++)
+    {
+        if(i%j == 0 )
+            break;
+    }
+    if (j == i)
+       document.write(i, "<br>");
+    j=2; 
+}
