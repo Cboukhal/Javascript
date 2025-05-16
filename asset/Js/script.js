@@ -198,6 +198,28 @@ do{
     document.write("Je suis le passager en trop ", n, "<br>");
     n++;
 }while(n<=10);
+
+//------------------------------------les Tableaux ------------------------------------//
+document.write("<h2>Tableaux</h2>");
+//Déclarer de tableau.
+// let tab1= [];
+// let tab2= new Array();//nouvelle instance de la class Array
+
+//Déclaration et initialisation
+let tab1 = ["Janat","Mathieu","Stanley","Armel","Anthony"];
+let tab2= new Array("Ludovic","Andrew","Anaïs","Tristan","Camil");
+
+//parcourir un tab
+
+for(i = 0;i < tab1.length; i++)
+{
+    document.write("indice : ",i," <b>Valeur</b> : ",tab1[i], "<br>");
+}
+document.write("<br>");
+for(i = 0;i < tab2.length; i++)
+{
+    document.write("indice : ",i," <b>Valeur</b> : ",tab2[i], "<br>");
+}
 //------------------------------------les Exercices ------------------------------------//
 
 
