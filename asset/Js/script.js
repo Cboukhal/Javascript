@@ -180,6 +180,28 @@ for(i = 10; i>=0;i--)
     document.write("i est égal au nombre de passage dans la boucle = ", i, "<br>");
 }
 
+document.write("<h3>for in</h3>");
+let tab1 = ["Janat","Mathieu","Stanley","Armel","Anthony"];
+for(let a in tab1)//parcour les indices du tableau
+{
+    document.write(tab1[a], "<br>");
+}
+document.write(a);
+
+document.write("<h3>for of</h3>");
+let tab2= new Array("Ludovic","Andrew","Anaïs","Tristan","Camil");
+for(let b of tab2)//parcour les valeurs du tableau
+{
+    document.write(b, "<br>");
+}
+document.write(b);
+document.write("<h3>forEach</h3>");
+tab2.forEach((c, d)=>//methode de l'objet Array, prend les valeurs du tab en 1er parametre et indice en 2nd.
+{
+    document.write("indice : ",d," <b>Valeur</b> : ",c, "<br>");
+});
+
+
 document.write("<h3>while</h3>");
 let n = 0;
 while (n<=10) {
@@ -205,10 +227,6 @@ document.write("<h2>Tableaux</h2>");
 // let tab1= [];
 // let tab2= new Array();//nouvelle instance de la class Array
 
-//Déclaration et initialisation
-let tab1 = ["Janat","Mathieu","Stanley","Armel","Anthony"];
-let tab2= new Array("Ludovic","Andrew","Anaïs","Tristan","Camil");
-
 //parcourir un tab
 
 for(i = 0;i < tab1.length; i++)
@@ -220,6 +238,27 @@ for(i = 0;i < tab2.length; i++)
 {
     document.write("indice : ",i," <b>Valeur</b> : ",tab2[i], "<br>");
 }
+document.write("<h3>copier le tableau 2 dans le tableau 1</h3>");
+//copier le tableau 2 dans le tableau 1
+
+for(let a of tab2)
+{
+    let j = tab1.length;
+    tab1[j]=a;
+}
+tab1.forEach((c, d)=>//methode de l'objet Array, prend les valeurs du tab en 1er parametre et indice en 2nd.
+{
+    document.write("indice : ",d," <b>Valeur</b> : ",c, "<br>");
+});
+
+//modifier le tableau 2 dans le tableau 1
+document.write("<h3>modifier le tableau 2 dans le tableau 1</h3>");
+tab1[3] = "Julien";
+tab1[8] = "Gracia";
+tab1.forEach((c, d)=>//methode de l'objet Array, prend les valeurs du tab en 1er parametre et indice en 2nd.
+{
+    document.write("indice : ",d," <b>Valeur</b> : ",c, "<br>");
+});
 //------------------------------------les Exercices ------------------------------------//
 
 
@@ -340,3 +379,112 @@ for(i = 2; i<=100;i++){
 //     alert("tu as échoué, vous n'avez rien gagné.");
 // else
 //     alert("bien joué vous avez gagné","<br>");
+
+// jours = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"];
+// mois = new Array("janvier","février","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","décembre");
+// document.write("Ecrire un programme à l'utilisateur de saisir un jour entre 1 et 7 et un moi entre 1 et 12 et affiche une date sous la forme lundi 15 janvier 2025,l'année et le jj peuvent rester fixe.","<br>")
+// let jj = prompt("Saisisser un jours entre 1 et 7");
+// // jj = jours[jj-1];
+// // jours.forEach((c,d)=>
+// // {
+// //         if(d == jj)
+// //             jj = c
+// // });
+// let mj = prompt("Saisser un mois entre 1 et 12");
+// // mj = mois[mj-1];
+// // for (let b in mois)
+// // {
+// //     if (b == mj)
+// //         mj = mois[b];
+// // }
+// document.write(jours[jj-1].toUpperCase() , " 15 " , mois[mj-1].toUpperCase()  , " 2025");
+//chercher le max et le min du tab et les permuter
+document.write("<br>");
+let tab = [2, 18, 36, 15, 8, 9, 57, 13];
+document.write(tab,"<br>");
+let t = tab.length-1;
+max = 0;
+min = 100;
+pmax = 0;
+pmin = 0;
+
+tab.forEach((c,b)=>
+{
+    if (max < c)
+    {
+        max = c;
+        pmax = b;
+    }
+    if (min > c)
+    {
+        min = c;
+        pmin = b;
+    }
+    if(b == t)
+    {
+        tab[pmax]=min;
+        tab[pmin]=max;
+    }
+}
+)
+document.write(tab,"<br>");
+
+//Exo 3 qui demande à l'user de saisir la taille tableau d'entier, ensuite les valeur, puis affiche le tableau ensuite fais la somme des valeurs et l'affiche ainsi que ça moyenne et l'affiche et fini par mettre toutes les notes endessous de la moyenne
+// let taille = prompt("donner la taille du tableau");
+// tab = [];
+// somme=0;
+// for(i=0;i<taille;i++)
+//     {
+//         tab[i]=prompt("donner une valeur à l'éléve numéro " + i);
+//         somme = somme + parseInt(tab[i]);
+//     }
+// document.write(tab,"<br>");
+// document.write("la somme de toute les valeurs est de ",somme,"<br>");
+// document.write("la moyenne de toute les valeurs est de ",somme/taille,"<br>");
+// for(i=0;i<taille;i++)
+//     {
+//         if(tab[i] < somme/taille)
+//             tab[i] = "ajournée";
+//     }
+// document.write(tab);
+
+//exo4:Ecrire un programme qui calcule
+//Le nombre de chiffre pair dans le tableau et son pourcentage
+//Le nombre de chiffre parfait dans le tableau et son pourcentage
+//Le nombre de chiffre premier dans le tableau et son pourcentage
+//pair 50%
+//parfait 2/12
+//premier 50%
+document.write("<br>");
+let tab4 = [2, 3, 8, 7, 12, 15, 28, 30, 17, 13, 6, 19];
+let premier = 0;
+let parfait = 0;
+let pair = 0;
+let v = true;
+j = 0;
+for(let a of tab4){
+    if (a%2 == 0)
+        pair++;
+    for(i = 2; i<a;i++){
+        if(a%i == 0)
+            v = false;
+    }
+    if(v == true)
+    {
+        premier++;
+        document.write("non",a,"<br>");
+    }
+    v =true;
+    for(i = 1; i<a;i++){
+        if(a%i == 0)
+            j = j + i;
+    }
+    if(j==a)
+        parfait++;
+    j = 0;        
+}
+document.write("<br>");
+document.write(tab4,"<br>");
+document.write("Le nombre de chiffre premier est de",premier," le pourcentage est de ",premier/tab4.length*100,"%","<br>");
+document.write("Le nombre de chiffre parfait est de ",parfait," le pourcentage est de ",parfait/tab4.length*100,"%","<br>");
+document.write("Le nombre de chiffre pair est de ",pair," le pourcentage est de ",pair/tab4.length*100,"%","<br>");
