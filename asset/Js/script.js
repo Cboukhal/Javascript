@@ -164,6 +164,8 @@ if (e > f) //condition alternative
 
 //------------------------------------les boucles ------------------------------------//
 document.write("<h2>Les boucles</h2>");
+document.write("<h3>for</h3>");
+
 for(i = 0; i<10;i++)
 {
     if(i == 6)
@@ -178,6 +180,24 @@ for(i = 10; i>=0;i--)
     document.write("i est égal au nombre de passage dans la boucle = ", i, "<br>");
 }
 
+document.write("<h3>while</h3>");
+let n = 0;
+while (n<=10) {
+    document.write("Je suis le passager numéro ", n, "<br>");
+    n++;
+}
+
+document.write("<h3>do while</h3>");
+n = 0;
+do{
+    document.write("Je suis le passager numéro ", n, "<br>");
+    n++;
+}while(n<=10);
+
+do{
+    document.write("Je suis le passager en trop ", n, "<br>");
+    n++;
+}while(n<=10);
 //------------------------------------les Exercices ------------------------------------//
 
 
@@ -264,3 +284,37 @@ for(i = 2; i<=100;i++){
     if (j == i)
        document.write(i," est un nombre premier", "<br>");
 }
+
+// document.write("Réaliser un programme du jeu du juste prix de 0 à 100","<br>");
+// n = Math.ceil(Math.random()*100);
+// essaye = 0
+// let prix = prompt("Entrer votre prix");
+// while (prix != n)
+// {
+//     if(prix > n){
+//         alert("Le prix est plus bas");
+//         essaye++;
+//     }
+//     else {
+//         alert("Le prix est plus haut");
+//         essaye++;
+//     }
+//     if(essaye == 3)
+//     {
+//         alert("Je vais t'aider");
+//         if (n < 50)
+//             alert("Le prix est entre 0 et 49")
+//         else
+//             alert("Le prix est entre 50 et 100")
+//     }
+//     if(essaye == 6)
+//     {
+//         alert("tu es null");
+//         break;
+//     }
+//     prix = prompt("Entrer un notre prix");
+// }
+// if (essaye == 6 )
+//     alert("tu as échoué, vous n'avez rien gagné.");
+// else
+//     alert("bien joué vous avez gagné","<br>");
