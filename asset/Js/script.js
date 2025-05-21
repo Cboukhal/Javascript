@@ -272,6 +272,8 @@ tab1.unshift("Janat");//ajoute 1 élément au début du tab
 document.writeln(tab1, "<br>");
 tab1.splice(2,0,"Boris","Jacques","Marie","Paulette","Jade");//ajoute des éléments à partir d'un indice ciblé du tab
 document.writeln(tab1, "<br>");
+tab1.splice(2,2);//supprime 2 éléments à partir d'un indice ciblé du tab
+document.writeln(tab1, "<br>");
 
 
 //------------------------------------les Exercices ------------------------------------//
