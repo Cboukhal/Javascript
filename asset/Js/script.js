@@ -275,6 +275,50 @@ document.writeln(tab1, "<br>");
 tab1.splice(2,2);//supprime 2 éléments à partir d'un indice ciblé du tab
 document.writeln(tab1, "<br>");
 
+//------------------------------------les tab multi ------------------------------------//
+document.writeln("<h3>les tableaux multidimensionnels</h3>");
+//Déclaration et initialisation
+//1er méthode
+let user=[
+    ["prenom","id","mdp","âge"],
+    ["Janat","janat@gmail.com","1234",20],
+    ["Mathieu","mathieu@yahoo.fr","abcd",35],
+    ["Julien","julien@outlook.fr","1234",20],
+    ["Stanley","stanley@orange.fr","5678",21],
+];
+document.writeln(user,"<br>");
+
+//2nd méthode
+let client1 = new Array("Ludo","ludo@gmail.com","qsdf",18);
+let client2 = new Array("Andrew","andrew@gmail.com","wxcv",19);
+let client3 = new Array("Anais","anais@gmail.com","qsdf",16);
+let client4 = new Array("Tristan","tristan@gmail.com","azer",20);
+let client5 = new Array("Camil","camil@gmail.com","1234",17);
+let client = new Array(client1,client2,client3,client4,client5)
+document.writeln(client,"<br>");
+document.writeln("<br>");
+
+//parcourir et afficher un tab multi
+for(a of client)
+{
+    for(b of a)
+        document.writeln(b," ")
+    document.writeln("<br>")
+}
+for(i = 1; i < user.length; i++){
+    for(j = 0; j < user[i].length; j++){
+        switch (j){
+            case 0 : document.writeln("<b>",user[0][0].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            case 1 : document.writeln("<b>",user[0][1].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            case 2 : document.writeln("<b>",user[0][2].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            default : document.writeln("<b>",user[0][3].toUpperCase(),"</b> : ", user[i][j],"<br>");
+        }
+    }
+    document.writeln("<br>");
+}
 
 //------------------------------------les Exercices ------------------------------------//
 
