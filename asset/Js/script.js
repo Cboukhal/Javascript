@@ -259,8 +259,22 @@ tab1.forEach((c, d)=>//methode de l'objet Array, prend les valeurs du tab en 1er
 {
     document.write("indice : ",d," <b>Valeur</b> : ",c, "<br>");
 });
-//------------------------------------les Exercices ------------------------------------//
+//------------------------------------les méthodes de l'objet array ------------------------------------//
+document.writeln("<h3>les méthodes array</h3>");
+document.writeln(tab1, "<br>");
+tab1.pop();//supprime le dernier élément du tableau
+document.writeln(tab1, "<br>");
+tab1.shift();//supprime le 1er élément
+document.writeln(tab1, "<br>");
+tab1.push("Camil");//ajoute 1 élément à la fin du tab
+document.writeln(tab1, "<br>");
+tab1.unshift("Janat");//ajoute 1 élément au début du tab
+document.writeln(tab1, "<br>");
+tab1.splice(2,0,"Boris","Jacques","Marie","Paulette","Jade");//ajoute des éléments à partir d'un indice ciblé du tab
+document.writeln(tab1, "<br>");
 
+
+//------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
 // document.write("Ecrire un programme qui demande à l'user de sair son age et une confirmation de son age, envoie le message bienvenue si il a plus de 18ans ou accés refusé sinon et aurevoir s'il ne confirme pas son age","<br>");
@@ -462,19 +476,19 @@ let parfait = 0;
 let pair = 0;
 let v = true;
 j = 0;
+//pair
 for(let a of tab4){
     if (a%2 == 0)
         pair++;
+//premier
     for(i = 2; i<a;i++){
         if(a%i == 0)
             v = false;
     }
     if(v == true)
-    {
         premier++;
-        document.write("non",a,"<br>");
-    }
     v =true;
+//parfait
     for(i = 1; i<a;i++){
         if(a%i == 0)
             j = j + i;
