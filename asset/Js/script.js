@@ -333,6 +333,56 @@ for(i=0;i<5;i++)
     bonjour();
 }
 
+//fonction sans arg mais avec return
+function nommer()
+{
+    let nom = prompt("Saisisser votre nom.");
+    return nom;    
+}
+// nom = nommer();
+document.writeln("Bonjour ",nom, "<br>");
+
+//fonction avec arg et sans return
+function comparer(a,b){
+    if(a>b)
+        document.writeln(a, " est supérieur à ", b, "<br>");
+    else if (a == b)
+        document.writeln(a, " est égal à ", b, "<br>");
+    else
+    document.writeln(a, " est inférieur à ", b, "<br>");
+}
+comparer(5,4);
+comparer(2,8);
+comparer(7,7);
+
+//fonction avec arg et return
+function carrer(a)
+{
+    return(a*a);
+}
+let bb = 5;
+nbr = carrer(bb);
+document.writeln("le carré de ",bb, " est ", nbr, "<br>");
+let far = function(){
+    document.writeln("<h3>Je suis une fonction anonyme</h3>");
+}
+far();
+//------------------------------------les fonctions fléchees ------------------------------------//
+//les fonctions flechees sont des fonctions anonymes
+let ff = ()=>{
+    document.writeln("<h3>Je suis une fonction flechee</h3>");
+}
+ff(); //appel à la fonction
+
+const tablem = (a)=>{
+    for(i=1;i<=12;i++){
+        document.writeln(a, " x ", i, " = ",a*i,"<br>");
+    }
+}
+for(i=1;i<=10;i++){
+    tablem(i);
+}
+
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
@@ -561,3 +611,67 @@ document.write(tab4,"<br>");
 document.write("Le nombre de chiffre premier est de",premier," le pourcentage est de ",premier/tab4.length*100,"%","<br>");
 document.write("Le nombre de chiffre parfait est de ",parfait," le pourcentage est de ",parfait/tab4.length*100,"%","<br>");
 document.write("Le nombre de chiffre pair est de ",pair," le pourcentage est de ",pair/tab4.length*100,"%","<br>");
+
+document.writeln("Ecrire une fonction qui demande à l'user de saisir un nombre et retourne le nombre.")
+document.writeln("Ecrire les fonction addition,soustraction,multiplication et division en faisant appel à la 1er fonction et affiche les résultats des opérations.")
+document.writeln("Ecrire une fonction qui demande à l'user de choisir une opération et appelle la fonction correspondante ou q pour quitter.")
+document.writeln("Faites appel à la derniére fonction pour répéter les opérations autant de fois que nécessaire tant l'user n'a pas saisi q.")
+
+function nombre() {
+    let a = parseInt(prompt("Choisisser un nombre."));
+    return a;    
+}
+function addition() {
+    a = nombre();
+    b = nombre();
+    document.writeln("<br>","Le résultat de l'addition de ",a," + ",b," = ",(a+b));
+    alert("Le résultat de l'addition de "+ a + " + "+ b + " = " + (a+b));
+}
+function soustraction() {
+    a = nombre();
+    b = nombre();
+    document.writeln("<br>","Le résultat de la soustraction de ",a," - ",b," = ",a-b);
+    alert("Le résultat de la soustraction de "+ a + " - "+ b + " = " + (a-b));
+}
+function multiplication() {
+    a = nombre();
+    b = nombre();
+    document.writeln("<br>","Le résultat de la multiplication de ",a," * ",b," = ",a*b);
+    alert("Le résultat de la multiplication de "+ a + " * "+ b + " = " + (a*b));
+}
+function division() {
+    a = nombre();
+    b = nombre();
+    if (b ==0)
+    {
+        document.writeln("<br>","division impossible");
+        alert("division impossible");
+    }
+    else
+    {
+        document.writeln("<br>","Le résultat de la division de ",a," / ",b," = ",a/b);
+        alert("Le résultat de la division de "+ a + " / "+ b + " = " + (a/b));
+    }
+}
+function operation()
+{
+    let choix = prompt("Bonjour qu'elle opération voulez vous choisir ? (addition,soustraction,multiplication ou division)");
+    while (choix !="q") 
+    {
+        if(choix == "addition")
+            addition();
+        if(choix == "soustraction")
+            soustraction();
+        if(choix == "multiplication")
+            multiplication();
+        if(choix == "division")
+            division();
+        choix = prompt("Qu'elle opération voulez vous choisir ? (addition,soustraction,multiplication ou division) ou vous pouvez quitter en envoyant q");
+    }
+    return (true);
+}
+
+// let ope;
+// do{
+//     ope = operation();
+// }while(ope!=true);
