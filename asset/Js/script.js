@@ -319,6 +319,19 @@ for(i = 1; i < user.length; i++){
     }
     document.writeln("<br>");
 }
+//------------------------------------les fonctions ------------------------------------//
+
+document.writeln("<h2>Les fonctions</h2>");
+//fonction sans arg ni return
+function bonjour()
+{
+    document.writeln("<h3>Je suis une fonctions JS.</h3>");
+}
+//Pour exec la fonction, on l'appelle
+for(i=0;i<5;i++)
+{
+    bonjour();
+}
 
 //------------------------------------les Exercices ------------------------------------//
 
