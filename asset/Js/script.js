@@ -378,10 +378,20 @@ const tablem = (a)=>{
     for(i=1;i<=12;i++){
         document.writeln(a, " x ", i, " = ",a*i,"<br>");
     }
+    document.writeln("<br>");
 }
-for(i=1;i<=10;i++){
-    tablem(i);
+n = 1;
+while (n<=12) {
+    tablem(n);
+    n++;
 }
+const bienvenue = ()=>{
+    prenom = prompt("Entrer votre prenom");
+    nom = prompt("Entrer votre nom");
+    alert("Bienvenue " + prenom + " " + nom);
+}
+// bienvenue();
+
 
 //------------------------------------les Exercices ------------------------------------//
 
@@ -675,3 +685,136 @@ function operation()
 // do{
 //     ope = operation();
 // }while(ope!=true);
+document.writeln("Réaliser le programme de l'eval algo exo 6")
+
+function affiche_employes(tab)
+{
+    for(i=0;i<tab.length;i++)
+    {
+       document.writeln(tab[i]);
+       alert(tab[i]); 
+    }
+}
+
+function ajouter_employes(tab)
+{
+    i = tab.length;
+    prenom=prompt("Saisisser un prénom.");
+    nom=prompt("Saisisser un nom.");
+    adresse=prompt("Saisisser une adresse.");
+    telephone=prompt("Saisisser un téléphone.");
+    annee=prompt("Saisisser une année embauche.");
+    salaire=prompt("Saisisser une salaire.");   
+    tab[i] = [prenom, nom, adresse, telephone, annee, salaire];
+    return (tab);
+}
+
+function changer_salaire(tab)
+{
+telephone=prompt("Saisisser un téléphone.");
+salaire = 0;
+for(i = 0;i<tab.length;i++)
+{
+    if (tab[i][3] == telephone)
+    {
+     salaire=prompt("quelle sera son nouveau salaire ?");
+     tab[i][5] = salaire; 
+    }
+}
+if (salaire == 0) {
+    alert("je ne l'ai pas trouvé");
+}
+return (tab);
+}
+
+
+function annee_employes(tab)
+{
+    annee = prompt("Quelle année cherchez vous, je vous afficherez tous les employé embauché cette année-ci");
+    employe = 0;
+    for(i=0;i<tab.length;i++)
+    {
+        if (tab[i][4] == annee)
+        {
+            alert(tab[i][1] + tab[i][0] + " a été employé en " + annee);
+            employe++;
+        }
+    }
+    if(employe == 0)
+        alert("personne n'a été employé cette anné-ci");
+}
+
+
+
+function n_ajouter_employes(tab)
+{
+    n = parseInt(prompt("Combien d'employés voulez vous ajouter ?"));
+    i = tab.length - 1;
+    n = n + i;
+    for(j = i+1;j<=n;j++)
+    {
+        tab[j] = [];
+        prenom=prompt("Saisisser un prénom.");
+        tab[j][0] = prenom;
+        nom=prompt("Saisisser un nom.");
+        tab[j][1] = nom;
+        adresse=prompt("Saisisser une adresse.");
+        tab[j][2] = adresse;
+        telephone=prompt("Saisisser une téléphone.");
+        tab[j][3] = telephone;
+        annee=prompt("Saisisser une année embauche.");
+        tab[j][4] = annee;
+        salaire=prompt("Saisisser un salaire.");   
+        tab[j][5] = salaire;
+    }
+    return (tab);
+}
+
+
+tab = [];
+let arret = false;
+i = 0;
+n = prompt("Bonjour entrer le nombre d'employé");
+for(i=0;i<n;i++)
+{
+    tab[i] = [];
+    for(j=0;j<6;j++)
+    {
+        if(j == 0)
+            tab[i][j]=prompt("Saisisser un prénom.");
+        if(j == 1)
+            tab[i][j]=prompt("Saisisser un nom.");
+        if(j == 2)
+            tab[i][j]=prompt("Saisisser une adresse.");
+        if(j == 3)
+            tab[i][j]=prompt("Saisisser un téléphone.");
+        if(j == 4)
+            tab[i][j]=prompt("Saisisser une année d'embauche.");
+        if(j == 5)
+            tab[i][j]=prompt("Saisisser un salaire.");
+    }
+}
+while(arret == false)
+{
+    alert("Vous pouvez affiche la liste de tous les employés ");
+    alert("Vous pouvez ajouter un employé.");
+    alert("Vous pouvez changer le salaire d’un employé.");
+    alert("Vous pouvez affiche tous les employé embauchés la même année.");
+    alert("Vous pouvez saisir le nombre d’employés à ajouter et qu’il puisse rentrer leurs informations un à un.");
+    let reponse = prompt("Que voulez vous faire ?(afficher)(ajouter)(changer_le_salaire)(année)(ajouter_n)");
+switch (reponse)
+{
+    case 'afficher':affiche_employes(tab);
+        break;
+    case 'ajouter':tab = ajouter_employes(tab);
+        break;
+    case 'changer_le_salaire':tab = changer_salaire(tab);
+        break;
+    case 'année':annee_employes(tab);
+        break;
+    case 'ajouter_n':tab = n_ajouter_employes(tab);
+        break;
+    default: alert("Je n'ai pas compris reéssayer plus tard");
+}
+arret = confirm("Voulez vous arrêter ?");
+}
