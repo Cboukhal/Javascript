@@ -319,6 +319,7 @@ for(i = 1; i < user.length; i++){
     }
     document.writeln("<br>");
 }
+<<<<<<< Updated upstream
 //------------------------------------les fonctions ------------------------------------//
 
 document.writeln("<h2>Les fonctions</h2>");
@@ -393,6 +394,26 @@ const bienvenue = ()=>{
 // bienvenue();
 
 
+=======
+document.writeln("<h4> client dans user </h4>")
+//copier le tab clien dans user
+for(let a of client)
+    user.push(a);
+for(i = 1; i < user.length; i++){
+    for(j = 0; j < user[i].length; j++){
+        switch (j){
+            case 0 : document.writeln("<b>",user[0][0].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            case 1 : document.writeln("<b>",user[0][1].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            case 2 : document.writeln("<b>",user[0][2].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            default : document.writeln("<b>",user[0][3].toUpperCase(),"</b> : ", user[i][j],"<br>");
+        }
+    }
+    document.writeln("<br>");
+}
+>>>>>>> Stashed changes
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
@@ -622,6 +643,7 @@ document.write("Le nombre de chiffre premier est de",premier," le pourcentage es
 document.write("Le nombre de chiffre parfait est de ",parfait," le pourcentage est de ",parfait/tab4.length*100,"%","<br>");
 document.write("Le nombre de chiffre pair est de ",pair," le pourcentage est de ",pair/tab4.length*100,"%","<br>");
 
+<<<<<<< Updated upstream
 document.writeln("Ecrire une fonction qui demande à l'user de saisir un nombre et retourne le nombre.")
 document.writeln("Ecrire les fonction addition,soustraction,multiplication et division en faisant appel à la 1er fonction et affiche les résultats des opérations.")
 document.writeln("Ecrire une fonction qui demande à l'user de choisir une opération et appelle la fonction correspondante ou q pour quitter.")
@@ -818,3 +840,187 @@ switch (reponse)
 }
 arret = confirm("Voulez vous arrêter ?");
 }
+=======
+document.writeln("<br>Ecrire un programme qui permet d'ajouter un user à la fin du tableau users si son id n'existe pas déjà dans le tableau<br>")
+for(i = 1; i < user.length; i++){
+    for(j = 0; j < user[i].length; j++){
+        switch (j){
+            case 0 : document.writeln("<b>",user[0][0].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            case 1 : document.writeln("<b>",user[0][1].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            case 2 : document.writeln("<b>",user[0][2].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            default : document.writeln("<b>",user[0][3].toUpperCase(),"</b> : ", user[i][j],"<br>");
+        }
+    }
+    document.writeln("<br>");
+}
+// let id = prompt("Entrez votre id");
+// let existe = false;
+// let new_user;
+// let mdp;
+// let age;
+// for(i = 1; i < user.length; i++)
+// {
+//     if(user[i][1] == id)
+//     {
+//         existe = true;
+//         break;
+//     }
+// }
+// if(existe == true)
+//     alert("Votre id existe déjà bienvenu");
+// else
+// {
+//     alert("Votre id n'existe pas");
+//     new_user= prompt("Entrez votre Prenom");
+//     mdp= prompt("Entrez votre mot de passe");
+//     age= prompt("Entrez votre age");
+//     alert("L'user a été ajouter.")
+//     let tab_user = [new_user,id,mdp,age];
+//     user.push(tab_user);
+//     for(i = 1; i < user.length; i++){
+//     for(j = 0; j < user[i].length; j++){
+//         switch (j){
+//             case 0 : document.writeln("<b>",user[0][0].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             case 1 : document.writeln("<b>",user[0][1].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             case 2 : document.writeln("<b>",user[0][2].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             default : document.writeln("<b>",user[0][3].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//         }
+//     }
+//     document.writeln("<br>");
+// }
+// }
+document.writeln("<br>Ecrire un programme qui permet de supprimer un user à l'aide de son id  dans le tableau<br>");
+// let id = prompt("Entrez l'id à supprimer");
+// let existe = false;
+// let position;
+// for(i = 1; i < user.length; i++)
+// {
+//     if(user[i][1] == id)
+//     {
+//         let conf = confirm("voulez-vous supprimer cet user " + user[i][1]);
+//         if (conf == true){
+//             existe = true;
+//             position = i;
+//             alert("L'user sera supprimer");
+//         }
+//         break;
+//     }
+// }
+// if (existe == false)
+//     alert("L'id n'existe pas");
+// else
+//     user.splice(position,1);
+// for(i = 1; i < user.length; i++){
+//     for(j = 0; j < user[i].length; j++){
+//         switch (j){
+//             case 0 : document.writeln("<b>",user[0][0].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             case 1 : document.writeln("<b>",user[0][1].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             case 2 : document.writeln("<b>",user[0][2].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             default : document.writeln("<b>",user[0][3].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//         }
+//     }
+//     document.writeln("<br>");
+// }
+document.writeln("<br>Ecrire un programme pour la connexion, affiche la connexion réussie si l'id existe et que le mpd correspond sinon affiche  l'id ou mpd incorrect.<br>");
+// let id = prompt("Entrez votre id");
+// let existe = false;
+// for(i = 1; i < user.length; i++)
+// {
+//     if(user[i][1] == id)
+//     {
+//         existe = true;
+//         id = prompt("Bienvenue user " + user[i][0] + " entrer votre mot de passe");
+//         for(j = 1; i < user.length; i++)
+//         {
+//             if(user[i][2] == id)
+//             {
+//                 alert("Bienvenu, connexion réussie.");
+//                 break;
+//             }
+//             else
+//             alert("Votre mdp incorrect veuillez reessayer plus tard.");
+//         }
+//         break;
+//     }
+// }
+// if(existe == false)
+//     alert("Votre id est incorrect veuillez reessayer plus tard.");
+
+document.writeln("<br>Ecrire un programme pour modifier le mdp d'un user à l'aide de son id, si l'id ou le mdp ne sont pas conforme on le modifie pas. Si le nouveaux mdp est identique à l'ancien aussi on ne modifie pas.<br>");
+// let id = prompt("Entrez votre id");
+// let existe = false;
+// let conf = false;
+// for(i = 1; i < user.length; i++)
+// {
+//     if(user[i][1] == id)
+//     {
+//         existe = true;
+//         id = prompt("Bienvenue user " + user[i][0] + " entrer votre mot de passe");
+//         for(j = 1; i < user.length; i++)
+//         {
+//             if(user[i][2] == id)
+//                 alert("Bienvenu, connexion réussie.");
+//             else
+//             alert("Votre mdp incorrect veuillez reessayer plus tard.");
+//         }
+//         break;
+//     }
+// }
+// if(existe == false)
+//     alert("Votre id est incorrect veuillez reessayer plus tard.");
+// else
+//     conf = confirm("voulez-vous changer votre mot de passe ");
+// if(conf == true)
+//     new_mdp = prompt("Entrer votre nouveau mot de passe");
+// if(new_mdp != id)
+//     user.splice(i,0,new_mdp);
+// else
+//     alert("Le nouveaux mdp est identique à l'ancien");
+// document.writeln(user[i]);
+
+document.writeln("<br>Ecrire un programme qui cherche et affiche toutes les info de l'user le plus agé, le moins agé et celui dont l'âge est le plus ploche de la moyenne.<br>");
+max = 0;
+pmax = 0;
+min = user[1][3];
+pmin = 0;
+moyenne = 0;
+for(i=1;i<user.length;i++)
+{
+    if(max<user[i][3])
+    {
+        max = parseInt(user[i][3]);
+        pmax = i;
+    }
+    if(min>user[i][3])
+    {
+        min = parseInt(user[i][3]);
+        pmin = i;
+    }
+    moyenne = moyenne + parseInt(user[i][3]);
+}
+for(i = 1; i < user.length; i++){
+    if (i == pmax || i == pmin || user[i][3]==Math.ceil(moyenne/(user.length-1)) || user[i][3]==Math.floor(moyenne/(user.length-1))){
+        for(j = 0; j < user[i].length; j++){
+        switch (j){
+            case 0 : document.writeln("<b>",user[0][0].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            case 1 : document.writeln("<b>",user[0][1].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            case 2 : document.writeln("<b>",user[0][2].toUpperCase(),"</b> : ", user[i][j],"<br>");
+            break;
+            default : document.writeln("<b>",user[0][3].toUpperCase(),"</b> : ", user[i][j],"<br>");
+        }
+    }  
+    }
+    document.writeln("<br>");
+}
+>>>>>>> Stashed changes
