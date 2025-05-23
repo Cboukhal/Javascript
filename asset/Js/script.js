@@ -319,7 +319,7 @@ for(i = 1; i < user.length; i++){
     }
     document.writeln("<br>");
 }
-<<<<<<< Updated upstream
+
 //------------------------------------les fonctions ------------------------------------//
 
 document.writeln("<h2>Les fonctions</h2>");
@@ -394,7 +394,7 @@ const bienvenue = ()=>{
 // bienvenue();
 
 
-=======
+
 document.writeln("<h4> client dans user </h4>")
 //copier le tab clien dans user
 for(let a of client)
@@ -413,7 +413,7 @@ for(i = 1; i < user.length; i++){
     }
     document.writeln("<br>");
 }
->>>>>>> Stashed changes
+
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
@@ -643,7 +643,7 @@ document.write("Le nombre de chiffre premier est de",premier," le pourcentage es
 document.write("Le nombre de chiffre parfait est de ",parfait," le pourcentage est de ",parfait/tab4.length*100,"%","<br>");
 document.write("Le nombre de chiffre pair est de ",pair," le pourcentage est de ",pair/tab4.length*100,"%","<br>");
 
-<<<<<<< Updated upstream
+
 document.writeln("Ecrire une fonction qui demande à l'user de saisir un nombre et retourne le nombre.")
 document.writeln("Ecrire les fonction addition,soustraction,multiplication et division en faisant appel à la 1er fonction et affiche les résultats des opérations.")
 document.writeln("Ecrire une fonction qui demande à l'user de choisir une opération et appelle la fonction correspondante ou q pour quitter.")
@@ -793,69 +793,69 @@ function n_ajouter_employes(tab)
 }
 
 
-tab = [];
-let arret = false;
-i = 0;
-n = prompt("Bonjour entrer le nombre d'employé");
-for(i=0;i<n;i++)
-{
-    tab[i] = [];
-    for(j=0;j<6;j++)
-    {
-        if(j == 0)
-            tab[i][j]=prompt("Saisisser un prénom.");
-        if(j == 1)
-            tab[i][j]=prompt("Saisisser un nom.");
-        if(j == 2)
-            tab[i][j]=prompt("Saisisser une adresse.");
-        if(j == 3)
-            tab[i][j]=prompt("Saisisser un téléphone.");
-        if(j == 4)
-            tab[i][j]=prompt("Saisisser une année d'embauche.");
-        if(j == 5)
-            tab[i][j]=prompt("Saisisser un salaire.");
-    }
-}
-while(arret == false)
-{
-    alert("Vous pouvez affiche la liste de tous les employés ");
-    alert("Vous pouvez ajouter un employé.");
-    alert("Vous pouvez changer le salaire d’un employé.");
-    alert("Vous pouvez affiche tous les employé embauchés la même année.");
-    alert("Vous pouvez saisir le nombre d’employés à ajouter et qu’il puisse rentrer leurs informations un à un.");
-    let reponse = prompt("Que voulez vous faire ?(afficher)(ajouter)(changer_le_salaire)(année)(ajouter_n)");
-switch (reponse)
-{
-    case 'afficher':affiche_employes(tab);
-        break;
-    case 'ajouter':tab = ajouter_employes(tab);
-        break;
-    case 'changer_le_salaire':tab = changer_salaire(tab);
-        break;
-    case 'année':annee_employes(tab);
-        break;
-    case 'ajouter_n':tab = n_ajouter_employes(tab);
-        break;
-    default: alert("Je n'ai pas compris reéssayer plus tard");
-}
-arret = confirm("Voulez vous arrêter ?");
-}
-=======
-document.writeln("<br>Ecrire un programme qui permet d'ajouter un user à la fin du tableau users si son id n'existe pas déjà dans le tableau<br>")
-for(i = 1; i < user.length; i++){
-    for(j = 0; j < user[i].length; j++){
-        switch (j){
-            case 0 : document.writeln("<b>",user[0][0].toUpperCase(),"</b> : ", user[i][j],"<br>");
-            break;
-            case 1 : document.writeln("<b>",user[0][1].toUpperCase(),"</b> : ", user[i][j],"<br>");
-            break;
-            case 2 : document.writeln("<b>",user[0][2].toUpperCase(),"</b> : ", user[i][j],"<br>");
-            break;
-            default : document.writeln("<b>",user[0][3].toUpperCase(),"</b> : ", user[i][j],"<br>");
-        }
-    }
-    document.writeln("<br>");
-}
+// tab = [];
+// let arret = false;
+// i = 0;
+// n = prompt("Bonjour entrer le nombre d'employé");
+// for(i=0;i<n;i++)
+// {
+//     tab[i] = [];
+//     for(j=0;j<6;j++)
+//     {
+//         if(j == 0)
+//             tab[i][j]=prompt("Saisisser un prénom.");
+//         if(j == 1)
+//             tab[i][j]=prompt("Saisisser un nom.");
+//         if(j == 2)
+//             tab[i][j]=prompt("Saisisser une adresse.");
+//         if(j == 3)
+//             tab[i][j]=prompt("Saisisser un téléphone.");
+//         if(j == 4)
+//             tab[i][j]=prompt("Saisisser une année d'embauche.");
+//         if(j == 5)
+//             tab[i][j]=prompt("Saisisser un salaire.");
+//     }
+// }
+// while(arret == false)
+// {
+//     alert("Vous pouvez affiche la liste de tous les employés ");
+//     alert("Vous pouvez ajouter un employé.");
+//     alert("Vous pouvez changer le salaire d’un employé.");
+//     alert("Vous pouvez affiche tous les employé embauchés la même année.");
+//     alert("Vous pouvez saisir le nombre d’employés à ajouter et qu’il puisse rentrer leurs informations un à un.");
+//     let reponse = prompt("Que voulez vous faire ?(afficher)(ajouter)(changer_le_salaire)(année)(ajouter_n)");
+// switch (reponse)
+// {
+//     case 'afficher':affiche_employes(tab);
+//         break;
+//     case 'ajouter':tab = ajouter_employes(tab);
+//         break;
+//     case 'changer_le_salaire':tab = changer_salaire(tab);
+//         break;
+//     case 'année':annee_employes(tab);
+//         break;
+//     case 'ajouter_n':tab = n_ajouter_employes(tab);
+//         break;
+//     default: alert("Je n'ai pas compris reéssayer plus tard");
+// }
+// arret = confirm("Voulez vous arrêter ?");
+// }
+
+// document.writeln("<br>Ecrire un programme qui permet d'ajouter un user à la fin du tableau users si son id n'existe pas déjà dans le tableau<br>")
+// for(i = 1; i < user.length; i++){
+//     for(j = 0; j < user[i].length; j++){
+//         switch (j){
+//             case 0 : document.writeln("<b>",user[0][0].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             case 1 : document.writeln("<b>",user[0][1].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             case 2 : document.writeln("<b>",user[0][2].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//             break;
+//             default : document.writeln("<b>",user[0][3].toUpperCase(),"</b> : ", user[i][j],"<br>");
+//         }
+//     }
+//     document.writeln("<br>");
+// }
 // let id = prompt("Entrez votre id");
 // let existe = false;
 // let new_user;
@@ -1023,4 +1023,3 @@ for(i = 1; i < user.length; i++){
     }
     document.writeln("<br>");
 }
->>>>>>> Stashed changes
