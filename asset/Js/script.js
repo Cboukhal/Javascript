@@ -417,9 +417,92 @@ for(i = 1; i < user.length; i++){
 //------------------------------------les Objets ------------------------------------//
 document.write("<h2>les Objets</h2>");
 //Création direct d'un objet
+let personne ={
+    Nom : "Doe",
+    Prenom : "John",
+    Age : 35,
+    Passions : ["voyage","lecture","cinema"],
+    //utilisation du this dans l'objet ne marche pas
+}
+console.log(personne);
+console.log(personne.Nom);
+console.log(personne.Prenom);
+console.log(personne.Age);
+for(a of personne.Passions)
+    console.log(a);
 
+//création d'un objet grace aux fonctions comme constructeur
+function employe(prenom,nom,salaire){
+    this.prenom = prenom;
+    this.nom = nom;
+    this.salaire = salaire;
+    this.changerSalaire = changerSalaire;
+    function changerSalaire(nouveauSalaire){
+        this.salaire = nouveauSalaire;
+    }
+}
 
+//on utilise l'instruction new pour creer des objets
+el = new employe("David","Mulot",3000);
+console.log(el.prenom);
+console.log(el.nom);
+console.log(el.salaire);
+document.writeln(el.prenom, " ",el.nom, " ",el.salaire,"<br>");
+el.changerSalaire(3200);
+document.writeln(el.prenom, " ",el.nom, " ",el.salaire,"<br>");
 
+//créer des objets avec l'instruction class
+//Il est recommandé de nommer ses class avec une 1er lettre en Maj
+class Animal{
+    constructor(nom){
+        this.nom = nom;
+    }
+    parler(){
+        document.writeln("Miaou ", this.nom, "<br>");
+    }
+}
+const a1 = new Animal("chat");
+console.log(a1);
+a1.parler();
+class Rectangle{
+    constructor(largeur,longueur){
+        this.largeur = largeur;
+        this.longueur = longueur;
+    }
+    surface(){
+        document.writeln("Sa surface est de ",this.largeur*this.longueur);
+    }
+    perimetre(){
+        return (this.largeur + this.longueur)*2;
+    }
+}
+const rect= new Rectangle(12,15);
+rect.surface();
+let perimetre = rect.perimetre();
+document.writeln("Son perimetre est de ",perimetre);
+
+//il est recommandé d'utiliser les accesseurs (c'est à dire des geteurs et des seteurs) pour récupérer ou modifier une donnée d'un objet
+class Carre{
+    constructor(cote){
+        this.cote = cote;
+    }
+    //les accesseurs
+    get perimetre(){
+        return this.carreperimetre();
+    }
+    get surface(){
+        return this.carresurface();
+    }
+    carresurface(){
+        document.writeln("Sa surface est de ",this.cote*this.cote);
+    }
+    carreperimetre(){
+        return this.cote*4;
+    }
+}
+let carre= new Carre(10);
+carre.surface;
+document.writeln("Son perimetre est de ",carre.perimetre);
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
