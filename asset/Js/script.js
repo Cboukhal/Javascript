@@ -414,6 +414,12 @@ for(i = 1; i < user.length; i++){
     document.writeln("<br>");
 }
 
+//------------------------------------les Objets ------------------------------------//
+document.write("<h2>les Objets</h2>");
+//Création direct d'un objet
+
+
+
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
