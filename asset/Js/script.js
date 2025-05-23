@@ -453,17 +453,17 @@ document.writeln(el.prenom, " ",el.nom, " ",el.salaire,"<br>");
 
 //créer des objets avec l'instruction class
 //Il est recommandé de nommer ses class avec une 1er lettre en Maj
-class Animal{
-    constructor(nom){
-        this.nom = nom;
-    }
-    parler(){
-        document.writeln("Miaou ", this.nom, "<br>");
-    }
-}
-const a1 = new Animal("chat");
-console.log(a1);
-a1.parler();
+// class Animal{
+//     constructor(nom){
+//         this.nom = nom;
+//     }
+//     parler(){
+//         document.writeln("Miaou ", this.nom, "<br>");
+//     }
+// }
+// const a1 = new Animal("chat");
+// console.log(a1);
+// a1.parler();
 class Rectangle{
     constructor(largeur,longueur){
         this.largeur = largeur;
@@ -514,6 +514,61 @@ document.writeln("Son perimetre est de ",carre.perimetre);
 carre.setcote = 12;
 carre.surface;
 document.writeln("Son perimetre est de ",carre.perimetre);
+//------------------------------------Heritage ------------------------------------//
+document.writeln("<h2>Heritage</h2>");
+class Animal{
+    constructor(nom){
+        this.nom = nom;
+    }
+    parler(){
+        document.writeln("Miaou je suis un ", this.nom, ".<br>");
+    }
+}
+const a1 = new Animal("chat");
+console.log(a1);
+a1.parler();
+//l'instruction qui permet de faire l'héritage est le extends
+class Chat extends Animal{
+    parler(){
+        document.writeln(this.nom,", je suis un chat donc je miaule. <br>");
+    }
+    deplacement(){
+        document.writeln(this.nom,", je me déplace à 4 pattes. <br>");
+    }
+}
+const a2 = new Chat("Felix");
+a2.parler();
+a2.deplacement();
+//Instruction super permet d'intégrer le constructeur mére dans le constructeur enfant
+class Serpent extends Animal{
+    constructor(nom,type){
+        super(nom);
+        this.type = type;
+    }
+    parler(){
+        document.writeln(this.nom,", je suis un serpent donc je siffle. <br>");
+    }
+    deplacement(){
+        document.writeln(this.nom,", je me déplace en rampant. <br>");
+    }
+}
+a3 = new Serpent("Asmode","Anaconda");
+a3.parler();
+a3.deplacement();
+
+//hériter d'une class héritage
+class Reptile extends Serpent{
+    constructor(nom,type,couleur){
+        super(nom,type);
+        this.couleur = couleur;
+    }
+    deplacement(){
+        document.writeln("Je m'appelle ",this.nom," et je suis un ",this.type,", je me déplace en rampant.","Je suis surtout de couleur ",this.couleur, "<br>");
+    }
+}
+let a4 = new Reptile("Naguini","boa","verte");
+a4.parler();
+a4.deplacement();
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
@@ -1227,3 +1282,40 @@ for(a of tabv){
     }
 }
 affichertebv(tabv);
+
+document.writeln("Ecrire une class EtreHumain avec son constructeur qui prend en parametre un poids,une taille et une couleur, mettez en place les accenteurs et une methode pour afficher ses infos ainsi q'une méthode pipi pour d'écrire comment il fait pipi.")
+document.writeln("Faites une class Homme qui hérite de la class EtreHumain et qui implémente la méthode pipi et preciser s'il fait pipi debout ou assis.")
+document.writeln("Faites pareil une class Femme.")
+class EtreHumain{
+    constructor(poids,taille,couleur){
+        this.poids = poids;
+        this.taille = taille;
+        this.couleur = couleur;
+    }
+    desc(){
+        document.writeln("Je pése ",this.poids, " et je mesure ",this.taille,". Ma couleur de peau est ",this.couleur,"<br>");
+    }
+    toilet(){
+        let debout = confirm("Etes vous debout devant les toilettes ?")
+        if(debout == true)
+            document.writeln("Donc vous êtes debout.<br>");
+        else
+            document.writeln("Donc vous êtes assis.<br>");
+    }
+}
+class Homme extends EtreHumain{
+    constructor(poids,taille,couleur){
+        super(poids,taille,couleur);
+    }
+}
+class Femme extends EtreHumain{
+    constructor(poids,taille,couleur){
+        super(poids,taille,couleur);
+    }
+}
+let h1 = new Homme("84kg","1m72","blanche");
+let f1 = new Femme("84kg","1m72","blanche");
+h1.desc();
+h1.toilet();
+f1.desc();
+f1.toilet();
