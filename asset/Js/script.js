@@ -487,6 +487,7 @@ class Carre{
         this.cote = cote;
     }
     //les accesseurs
+    //get (récupére)
     get perimetre(){
         return this.carreperimetre();
     }
@@ -499,8 +500,18 @@ class Carre{
     carreperimetre(){
         return this.cote*4;
     }
+    get getote(){
+        return this.cote;
+    }
+    //set (modifie)
+    set setcote(nouveau_cote){
+        this.cote = nouveau_cote;
+    }
 }
 let carre= new Carre(10);
+carre.surface;
+document.writeln("Son perimetre est de ",carre.perimetre);
+carre.setcote = 12;
 carre.surface;
 document.writeln("Son perimetre est de ",carre.perimetre);
 //------------------------------------les Exercices ------------------------------------//
@@ -1112,3 +1123,107 @@ for(i = 1; i < user.length; i++){
     }
     document.writeln("<br>");
 }
+
+document.writeln("creer la class voiture avec son constructeur qui prend en parametre la marque,le modele,la categorie,la motorisation,la boite et la couleur.<br>");
+document.writeln("Ecrire les méthodes afficher la voiture et tous les accesseurs.<br>");
+document.writeln("On va creer les objets suivants:<br>");
+document.writeln("Renault, magane, citadine,110dci,automatique,rouge<br>");
+document.writeln("Citroen, C4cactus, SUV,120dci,manuelle,bleu<br>");
+document.writeln("Peugot, 5008, SUV familliale,136dci,automatique,gris<br>");
+document.writeln("Afficher les 3 véhicules <br>");
+document.writeln("La renault devient une scenic et une boite manuelle <br>");
+document.writeln("La citroen devient une C3 citadine blanche <br>");
+document.writeln("La peugeot devient une 306 citadine jaune <br>");
+document.writeln("Afficher les 3 nouveaux véhicules <br>");
+document.writeln("Créer un tableau contenant les 3 véhicules <br>");
+document.writeln("Créer une fonction permettant d'ajoute une autre voiture au tableau <br>");
+document.writeln("Afficher à nouveau tableau <br>");
+document.writeln("Rechercher et modifier tableau les infos de la c3 par picasso berline noir<br>");
+document.writeln("Afficher à nouveau tableau <br>");
+document.writeln("<br>");
+
+class Voiture{
+    constructor(marque,modele,categorie,motorisation,boite,couleur){
+        this.marque=marque;
+        this.modele=modele;
+        this.categorie=categorie;
+        this.motorisation=motorisation;
+        this.boite=boite;
+        this.couleur=couleur;
+    }
+    affichervoiture(){
+        document.writeln("c'est une ",this.marque," modéle ",this.modele," ",this.categorie," avec ",this.motorisation, " et elle est en ",this.boite, " de couleur ",this.couleur,"<br>");
+    }
+    get afficher(){
+        return this.affichervoiture();
+    }
+    set setmarque(nv_marque){
+        this.marque = nv_marque;
+    }
+    set setmodele(nv_modele){
+        this.modele = nv_modele;
+    }
+    set setcategorie(nv_categorie){
+        this.categorie = nv_categorie;
+    }
+    set setmororisation(nv_motorisation){
+        this.motorisation = nv_motorisation;
+    }
+    set setboite(nv_boite){
+        this.boite = nv_boite;
+    }
+    set setcouleur(nv_couleur){
+        this.couleur = nv_couleur;
+    }
+}
+function affichertebv(tab){
+    for(i=0;i<tab.length;i++)
+       tab[i].afficher;
+}
+function ajouterv(tab)
+{
+    continuer = false;
+    while(continuer != true){
+        j = prompt("Combien de voiture voulez vous ajouter ?")
+        for(i=0;i<j;i++)
+        {
+            let voitures = new Voiture(prompt("marque"),prompt("modele"),prompt("categorie"),prompt("motorisation"),prompt("boite"),prompt("couleur"));
+            tab.push(voitures);
+        }
+        continuer = confirm("Voulez-vous arrréter ?")
+    }
+    affichertebv(tab);
+}
+let voiture1 = new Voiture("Renault", "magane", "citadine","110dci","automatique","rouge");
+let voiture2 = new Voiture("Citroen", "C4cactus", "SUV","120dci","manuelle","bleu");
+let voiture3 = new Voiture("Peugot", "5008", "SUV familliale","136dci","automatique","gris");
+voiture1.afficher;
+voiture2.afficher;
+voiture3.afficher;
+voiture1.setmarque = "Scenic";
+voiture1.boite = "manuelle";
+voiture2.modele = "C3";
+voiture2.categorie = "citadine";
+voiture2.couleur = "blanche";
+voiture3.categorie = "306";
+voiture3.categorie = "citadine";
+voiture3.couleur = "jaune";
+document.writeln("<br>");
+voiture1.afficher;
+voiture2.afficher;
+voiture3.afficher;
+let tabv = [];
+tabv.push(voiture1);
+tabv.push(voiture2);
+tabv.push(voiture3);
+document.writeln("<br>");
+// ajouterv(tabv);
+for(a of tabv){
+    if(a.modele == "C3")
+    {
+        a.modele = "Picasso";
+        a.categorie = "berline";
+        a.couleur = "noir";
+    }
+}
+affichertebv(tabv);
