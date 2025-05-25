@@ -1319,3 +1319,9 @@ h1.desc();
 h1.toilet();
 f1.desc();
 f1.toilet();
+
+class Magasin {
+    constructor(){
+        
+    }
+}
