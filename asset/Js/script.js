@@ -589,11 +589,109 @@ let qs = document.querySelectorAll('h2');
 // console.log(qs[1]);
 
 //on peut séléctionner les class par geteElementByClassName
-console.log(document.getElementsByClassName('para'));
+// console.log(document.getElementsByClassName('para'));
 
 //on peut séléctionner les id par geteElementById
-console.log(document.getElementById('parag'));
+// console.log(document.getElementById('parag'));
 
+//on peut séléctionner les balises par getElementsByTagName
+// console.log(document.getElementsByTagName('h2'));
+
+const premH1 = document.querySelector('h1');
+console.log(premH1);
+premH1.style.color='green';
+premH1.style.backgroundColor='gold';
+// premH1.style.fontSize='2em';
+const premH2 = document.querySelector('h2');
+premH2.classList.add('visuel');//Ajout une classe
+
+premH1.textContent = "Je suis un H1 pour la modif° du DOM"; //Ajout de contenu de type texte
+
+const parag = document.getElementById('parag');
+parag.innerHTML += "<span style='color:red'>. Je sui un paragraphe inséré depuis le JS </span>";
+
+//les événements
+//1er méthode
+//click et dblclick
+// premH1.addEventListener('click',()=>{
+//     premH1.style.visibility='hidden';
+// })
+// premH2.addEventListener('dblclick',()=>{
+//     premH1.style.visibility='visible';
+// })
+
+//2nd méthode voir html
+function afficher(){
+    premH1.style.visibility = 'visible';
+}
+function cacher(){
+    premH1.style.visibility = 'hidden';
+}
+premH1.addEventListener('click',cacher);
+premH2.addEventListener('dblclick',afficher);
+
+const increment = document.getElementById('increment');
+const plus = document.getElementById('plus');
+const moins = document.getElementById('moins');
+let incre = 0;
+console.log(i);
+plus.addEventListener('click',()=>{
+    incre++;
+    increment.innerHTML = incre;
+});
+moins.addEventListener('click',()=>{
+    incre--;
+    increment.innerHTML = incre;
+});
+
+//mouse enter et leave
+const body = document.querySelector('body');
+body.addEventListener('mouseenter',()=>{
+    body.style.backgroundColor = 'grey';
+});
+body.addEventListener('mouseleave',()=>{
+    body.style.backgroundColor = 'white';
+});
+
+//mouse down et up
+const sndH2 = document.getElementById('sndH2');
+sndH2.addEventListener('mousedown',()=>{
+    sndH2.style.backgroundColor = "green";
+    sndH2.style.padding = '20px';
+})
+sndH2.addEventListener('mouseup',()=>{
+    sndH2.style.backgroundColor = "transparent";
+})
+
+//mouse over et out
+parag.addEventListener('mouseover',()=>{
+    parag.style.background = "blueviolet";
+    parag.style.textAlign = "center";
+})
+parag.addEventListener('mouseout',()=>{
+    parag.style.background = "transparent";
+})
+
+//mouse move s'utilise avec un objet window
+const souris = document.getElementById('souris');
+window.addEventListener('mousemove',(element)=>{
+    souris.style.left = element.pageX + "px";
+    souris.style.top = element.pageY + "px";
+    souris.style.transform = "translate(-50% ,-50%)";
+});
+
+//evenement claviers
+//key up, keydown, keypress
+// body.addEventListener('keypress',(element2)=>{
+//     if (element2.key == 'Enter') {
+//         body.style.backgroundColor = "black";
+//     }
+// })
+body.addEventListener('keyup',(element2)=>{
+    if (element2.key == 'Enter') {
+        body.style.backgroundColor = "red";
+    }
+})
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");

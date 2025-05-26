@@ -8,12 +8,33 @@
     <script defer>
         document.write("<h1>Bienvenue sur Javascript</h1>");
     </script>
+    <style>
+        .visuel{
+            background-color: greenyellow;
+            color: gold;
+        }
+        #souris{
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            opacity: 0.4;
+            z-index: -1;
+            position: absolute;
+            background-color: firebrick;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Manipulation du DOM</h1>
+    <p id="souris"></p>
+    <div id="increment"></div>
+    <button id="moins">-</button>
+    <button id="plus">+</button>
     <h2>Je suis le 1er H2</h2>
-    <h2>Je suis le 2nd H2</h2>
+    <!-- <h1 onclick="cacher()">Manipulation du DOM</h1>
+    <h2 onclick="afficher()">Je suis le 1er H2</h2> -->
+    <h2 id="sndH2">Je suis le 2nd H2</h2>
     <h2>Je suis le 3éme H2</h2>
     <p class="para">
         Je suis un paragraphe <span>je suis le spasn du paragraphe</span>
