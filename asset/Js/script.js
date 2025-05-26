@@ -752,7 +752,7 @@ window.addEventListener('scroll',()=>{
 //load
 window.addEventListener('load',()=>{
     document.querySelector('audio').play;
-    alert("la page s'est correctement chargée.");
+    // alert("la page s'est correctement chargée.");
 })
 //------------------------------------les Exercices ------------------------------------//
 
@@ -1507,3 +1507,44 @@ affichertebv(tabv);
 
 //exo creer 3 boutton bleu, jaune et rouge qui permettent de changer la couleur du texte avec le boutton
 //creer 2 bouton qui permettent d'augmenter la taille du texte et de la diminuer si la taille est inf a 200px on fait taille +20px, la taille min étant de 20px, si la taille est sup à 200px on revient à 20px au prochain click, on diminue aussi de 20px en cliquant sur le bouton
+
+const couleur = document.getElementById('couleur');
+const bleu = document.getElementById('bleu');
+const jaune = document.getElementById('jaune');
+const rouge = document.getElementById('rouge');
+bleu.style.color='blue';
+jaune.style.color='yellow';
+rouge.style.color='red';
+
+bleu.addEventListener('click',()=>{
+    couleur.style.color = "blue";
+})
+jaune.addEventListener('click',()=>{
+    couleur.style.color = "yellow";
+})
+rouge.addEventListener('click',()=>{
+    couleur.style.color = "red";
+})
+
+const texte = document.getElementById('texte');
+const tplus = document.getElementById('textep');
+const tmoins = document.getElementById('textem');
+i = 40;
+tplus.addEventListener('click',()=>{
+    if(texte.style.fontSize!= '200px')
+    {
+        i = i + 20;
+        texte.style.fontSize = i + 'px';
+    }
+    else
+        texte.style.fontSize = 20 +'px';
+})
+tmoins.addEventListener('click',()=>{
+    if(texte.style.fontSize!= '20px')
+    {
+        i = i - 20;
+        texte.style.fontSize = i + 'px';
+    }
+    else
+        texte.style.fontSize = 20 +'px';
+})
