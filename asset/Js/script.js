@@ -688,9 +688,71 @@ window.addEventListener('mousemove',(element)=>{
 //     }
 // })
 body.addEventListener('keyup',(element2)=>{
-    if (element2.key == 'Enter') {
+    if (element2.key == 'Enter')
         body.style.backgroundColor = "red";
+    else if (element2.key == 'p')
+        body.style.backgroundColor = "purple";
+    else if (element2.key == 'o')
+        body.style.backgroundColor = "orange";
+})
+body.addEventListener('keydown',(element2)=>{
+    if (element2.key == 'g')
+        body.style.backgroundColor = "gold";
+})
+
+//evenemts du formulaire
+//input
+const euro = document.getElementById('euro');
+const dollar = document.getElementById('dollar');
+let eurodollar = 1.14;
+let dollareuro = 0.88;
+euro.addEventListener('input',()=>{
+    let valeur = Number(euro.value);
+    if(typeof(valeur) == "number"){
+        let resultat = valeur*eurodollar;
+        dollar.value = resultat.toFixed(2);//value pour les inputs
     }
+    if(dollar.value=='NaN')
+        alert("erreur");
+
+})
+dollar.addEventListener('input',()=>{
+    let valeur = Number(dollar.value);
+    if(typeof(valeur) == "number"){
+        let resultat = valeur*dollareuro;
+        euro.value = resultat.toFixed(2);//value pour les inputs
+    }
+    else
+        alert("erreur");
+
+})
+
+//submit fonction avec un firmulaire
+const form = document.querySelector('form');
+const prenom2 = document.getElementById('prenom');
+form.addEventListener('submit',(element)=>{
+    // element.preventDefault();//empêche l'envoie du formulaire
+    prenom = prenom2.value;
+    alert("merci "+ prenom + ". Votre message a bien été enregistré");
+})
+
+//Focus et blur
+prenom2.addEventListener('focus',()=>{
+    prenom2.style.backgroundColor = "red";
+})
+prenom2.addEventListener('blur',()=>{
+    prenom2.style.backgroundColor = "blue";
+})
+
+//evenemt ecran
+//scroll et load fonctionnent avec l'objet window
+window.addEventListener('scroll',()=>{
+    (window.scrollY > 100) ? body.style.backgroundColor = 'red' : body.style. backgroundColor = 'transparent';
+})
+//load
+window.addEventListener('load',()=>{
+    document.querySelector('audio').play;
+    alert("la page s'est correctement chargée.");
 })
 //------------------------------------les Exercices ------------------------------------//
 
@@ -1442,3 +1504,6 @@ affichertebv(tabv);
 //h1.toilet();
 // f1.desc();
 //f1.toilet();
+
+//exo creer 3 boutton bleu, jaune et rouge qui permettent de changer la couleur du texte avec le boutton
+//creer 2 bouton qui permettent d'augmenter la taille du texte et de la diminuer si la taille est inf a 200px on fait taille +20px, la taille min étant de 20px, si la taille est sup à 200px on revient à 20px au prochain click, on diminue aussi de 20px en cliquant sur le bouton
