@@ -569,6 +569,31 @@ class Reptile extends Serpent{
 let a4 = new Reptile("Naguini","boa","verte");
 a4.parler();
 a4.deplacement();
+//------------------------------------Manipulation du DOM ------------------------------------//
+document.writeln("<h2>Manipulation du DOM</h2>")
+// //Le quaryselector permet de séléctionner tout type délément mais il ne prend que la 1er occurrence
+// console.log(document.querySelector('h1'));
+// console.log(document.querySelector('h2'));
+// console.log(document.querySelector('p'));
+// console.log(document.querySelector('#parag'));
+// console.log(document.querySelector('.para'));
+// console.log(document.querySelector('p span'));
+// console.log(document.querySelector('ul li:first-child'));
+
+//Si on veut on séléctionner toutes les occurrences, on utilise le querySelectorAll
+// console.log(document.querySelectorAll('h2'));
+let qs = document.querySelectorAll('h2');
+// for (a of qs){
+//     console.log(a);
+// }
+// console.log(qs[1]);
+
+//on peut séléctionner les class par geteElementByClassName
+console.log(document.getElementsByClassName('para'));
+
+//on peut séléctionner les id par geteElementById
+console.log(document.getElementById('parag'));
+
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
