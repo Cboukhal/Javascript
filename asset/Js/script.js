@@ -1283,39 +1283,39 @@ for(a of tabv){
 }
 affichertebv(tabv);
 
-document.writeln("Ecrire une class EtreHumain avec son constructeur qui prend en parametre un poids,une taille et une couleur, mettez en place les accenteurs et une methode pour afficher ses infos ainsi q'une méthode pipi pour d'écrire comment il fait pipi.")
-document.writeln("Faites une class Homme qui hérite de la class EtreHumain et qui implémente la méthode pipi et preciser s'il fait pipi debout ou assis.")
-document.writeln("Faites pareil une class Femme.")
-class EtreHumain{
-    constructor(poids,taille,couleur){
-        this.poids = poids;
-        this.taille = taille;
-        this.couleur = couleur;
-    }
-    desc(){
-        document.writeln("Je pése ",this.poids, " et je mesure ",this.taille,". Ma couleur de peau est ",this.couleur,"<br>");
-    }
-    toilet(){
-        let debout = confirm("Etes vous debout devant les toilettes ?")
-        if(debout == true)
-            document.writeln("Donc vous êtes debout.<br>");
-        else
-            document.writeln("Donc vous êtes assis.<br>");
-    }
-}
-class Homme extends EtreHumain{
-    constructor(poids,taille,couleur){
-        super(poids,taille,couleur);
-    }
-}
-class Femme extends EtreHumain{
-    constructor(poids,taille,couleur){
-        super(poids,taille,couleur);
-    }
-}
-let h1 = new Homme("84kg","1m72","blanche");
-let f1 = new Femme("84kg","1m72","blanche");
-h1.desc();
-h1.toilet();
-f1.desc();
-f1.toilet();
+// document.writeln("Ecrire une class EtreHumain avec son constructeur qui prend en parametre un poids,une taille et une couleur, mettez en place les accenteurs et une methode pour afficher ses infos ainsi q'une méthode pipi pour d'écrire comment il fait pipi.")
+// document.writeln("Faites une class Homme qui hérite de la class EtreHumain et qui implémente la méthode pipi et preciser s'il fait pipi debout ou assis.")
+// document.writeln("Faites pareil une class Femme.")
+// class EtreHumain{
+//     constructor(poids,taille,couleur){
+//         this.poids = poids;
+//         this.taille = taille;
+//         this.couleur = couleur;
+//     }
+//     desc(){
+//         document.writeln("Je pése ",this.poids, " et je mesure ",this.taille,". Ma couleur de peau est ",this.couleur,"<br>");
+//     }
+//     toilet(){
+//         let debout = confirm("Etes vous debout devant les toilettes ?")
+//         if(debout == true)
+//             document.writeln("Donc vous êtes debout.<br>");
+//         else
+//             document.writeln("Donc vous êtes assis.<br>");
+//     }
+// }
+// class Homme extends EtreHumain{
+//     constructor(poids,taille,couleur){
+//         super(poids,taille,couleur);
+//     }
+// }
+// class Femme extends EtreHumain{
+//     constructor(poids,taille,couleur){
+//         super(poids,taille,couleur);
+//     }
+// }
+// let h1 = new Homme("84kg","1m72","blanche");
+// let f1 = new Femme("84kg","1m72","blanche");
+// h1.desc();
+//h1.toilet();
+// f1.desc();
+//f1.toilet();
