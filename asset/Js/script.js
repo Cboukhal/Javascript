@@ -747,13 +747,46 @@ prenom2.addEventListener('blur',()=>{
 //evenemt ecran
 //scroll et load fonctionnent avec l'objet window
 window.addEventListener('scroll',()=>{
-    (window.scrollY > 100) ? body.style.backgroundColor = 'red' : body.style. backgroundColor = 'transparent';
+    (window.scrollY > 100) ? body.style.backgroundColor = 'whitesmoke' : body.style. backgroundColor = 'transparent';
 })
 //load
 window.addEventListener('load',()=>{
     document.querySelector('audio').play;
     // alert("la page s'est correctement chargée.");
 })
+//------------------------------------les Dates et heure ------------------------------------//
+document.writeln("<h2>date et heure");
+let date = new Date();
+console.log(date.getHours());//Heure local
+console.log(date.getMinutes());//minutes 
+console.log(date.getSeconds());//secondes 
+console.log(date.getDay());//jour de la semaine commence a dimanche = 0;
+console.log(date.getDate());//jour du mois actuelle;
+console.log(date.getMonth());//le mois actuelle commence en janvier = 0;
+console.log(date.getFullYear());//l'année actuelle;
+
+const affdate = document.getElementById('affdate');
+affdate.style.textAlign = 'center';
+function afficherDateHeure(){
+    let d = new Date();
+    let jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    let moi = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+    let jour = d.getDay();
+    let jj = d.getDate();
+    let mois = d.getMonth();
+    let annee = d.getFullYear();
+    let dtcomp = "<h3>" + jours[jour] + " " + jj + "/" + moi[mois] + "/" + annee + "</h3>";
+    let heure = d.getHours();
+    let minutes = d.getMinutes();
+    let secondes = d.getSeconds();
+    (secondes<10)?secondes= "0" + secondes : secondes;
+    (minutes<10)?minutes= "0" + minutes : minutes;
+    (heure<10)?heure= "0" + heure : heure;
+    let hecomp = "<h3>" + heure + ":" + minutes + ":" + secondes + "</h3>";
+    affdate.innerHTML = dtcomp + hecomp;
+}
+setInterval(afficherDateHeure ,1000);//appel une fonction du temps défini
+
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
@@ -1529,7 +1562,7 @@ rouge.addEventListener('click',()=>{
 const texte = document.getElementById('texte');
 const tplus = document.getElementById('textep');
 const tmoins = document.getElementById('textem');
-i = 40;
+i = 20;
 tplus.addEventListener('click',()=>{
     if(texte.style.fontSize!= '200px')
     {
@@ -1537,7 +1570,10 @@ tplus.addEventListener('click',()=>{
         texte.style.fontSize = i + 'px';
     }
     else
+    {
+        i = 20;
         texte.style.fontSize = 20 +'px';
+    }
 })
 tmoins.addEventListener('click',()=>{
     if(texte.style.fontSize!= '20px')
@@ -1546,5 +1582,8 @@ tmoins.addEventListener('click',()=>{
         texte.style.fontSize = i + 'px';
     }
     else
+    {
+        i = 20;
         texte.style.fontSize = 20 +'px';
+    }
 })
