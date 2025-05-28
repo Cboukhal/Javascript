@@ -600,7 +600,71 @@
     <section class="partie">
     <h2 id="API">15. Les API</h2>
     <p>
+        API signifie Application Programming Interface et est un concept qui n'est ni limité ni spécifique à JavaScript , mais qui est utilisé dans presque tous les langages d'application Web. En tant que développeur Web, vous devez connaître l'API.
+        <br>En tant que concept, l'API existe depuis plus de 50 ans, mais ces dernières années, elle est devenue très populaire et a décrit une méthode différente pour créer nos applications.
+        <br>Le but de l'API est de permettre la communication entre les applications en tant qu'intermédiaire , les deux applications pouvant avoir été créées avec des outils et des technologies différents. Cela peut être réalisé en utilisant des normes API telles que REST, SOAP, qui décrivent des protocoles ou des ensembles de règles que le client (qui doit appeler) et le serveur (qui répond aux demandes du client) doivent suivre. Ces normes sont essentielles à la communication. Ces normes décrivent à quoi devrait ressembler une requête et le format dans lequel le client doit attendre une réponse du serveur.
+        <br>REST (Representational State Transfer) est un ensemble de principes architecturaux. SOAP (Simple Object Access Protocol) est un protocole officiel géré par le W3C (World Wide Web Consortium). La principale différence entre les deux est que SOAP est un protocole, REST non. En général, les API suivent l'approche REST ou SOAP en fonction de leur utilisation et des préférences du développeur.
+        </p><p>
+        <h3>API REST</h3>
+        <ul>Une API web est dite "REST" ou “Restful” si elle a les caractéristiques suivantes:
+            <li>- Les requêtes sont envoyées sous forme de requêtes HTTP:</li>
+            <li>- Méthodes HTTP: GET, POST, PUT, PATCH, DELETE...</li>
+            <li>- Un Endpoint ou une route: http://example.com/api/ressources</li>
+            <li>- Les requêtes doivent être envoyées avec un MIME*/Content-type spécifique tel: JSON, XML, HTML, etc.</li>
+        </ul>
+        </p><p>
+        <h3>Contraintes d’une API REST</h3>
+        <ol> Une API Restful doit respecter certaines contraintes d’architecture:
+            <li>Archi client-serveur: chacun évolue indépendamment.</li>
+            <li>Serveur sans états (stateless): pas de sessions.</li>
+            <li>Utilisation du cache: le client sait combien de temps il peut garder les données qu’il reçoit avant expiration.</li>
+            <li>Une interface uniforme: un seul id, contient l’URL des ressources suivantes...</li>
+            <li>Archi en couches: Réduire la complexité de l’architecture globale de l’API.</li>
+            <li>Code à la demande: étendre les fonctionnalités du client.</li>
+        </ol>
+        <h3>Ressources</h3>
+        <ul>En REST tout est resources, on interagit avec les ressources à travers différents routes (URLs):
+            <li>- http://example.com/products</li>
+            <li>- http://example.com/products/1</li>
+            <li>- http://example.com/products/1/description</li>
+        </ul>
+        <ul>Pour interagir avec une ressource, il suffit d’utiliser la méthode HTTP e'"adéquate :
+            <li>- GET http://example.com/products/1 (Récupérer)</li>
+            <li>- POST http://example.com/products (Créer)</li>
+            <li>- PUT ou PATCH http://example.com/products/1 (Mettre à jour)</li>
+            <li>- DELETE http://example.com/products/1 (Effacer)</li>
+        </ul>
+        <h3>Fetch</h3>
+        <ul>L’API Fetch comporte une seule fonction, concise et facile à utiliser fetch('url', 'options');
+            <li>fetch prend en paramètre l’URL de la ressource que vous voulez consulter et des options si besoin.</li>
+            <li>Elle retourne une Promesse.</li>
+        </ul>
+        <h4>Les Promesses:</h4>
+        <ul>Fetch retourne une promesse qui peut être dans un des états suivants:
+            <li>pending: état initial, promesse non-exécutée</li>
+            <li>fulfilled: la promesse a été exécutée correctement</li>
+            <li>rejected: la promesse a rencontrée une erreur</li>
+        </ul>
+        <p>
+            On attache un gestionnaire à une promesse via .then()
+            <br>fetch('images.txt').then(response => console.log(response.status));
+        </p>
+        <h4>API SOAP : Simple Object Access Protocol</h4>
+        </p><p>
+        SOAP est un protocole standard initialement conçu pour que des applications développées avec différents langages sur différentes plateformes puissent communiquer. Comme il s'agit d'un protocole, il impose des règles intégrées qui augmentent la complexité et les coûts, ce qui peut ralentir le chargement des pages. Cependant, ces standards assurent la conformité et sont ainsi privilégiés pour certains scénarios d'entreprise. Les standards de conformité intégrés incluent la sécurité, l'atomicité, la cohérence, l'isolement et la durabilité (ACID), un ensemble de propriétés qui permet d'assurer des transactions de base de données fiables.
+        Voici les principales spécifications de services web :
+        WS-Security (Web Services Security) : spécification qui standardise la manière dont les messages sont sécurisés et transférés via des identifiants uniques appelés jetons.
+        <br>WS-ReliableMessaging : spécification qui standardise la gestion des erreurs entre les messages transférés par le biais d'une infrastructure informatique non fiable.
+        WS-Adressing (Web Services Addressing) : spécification qui ajoute les informations de routage des paquets en tant que métadonnées dans des en-têtes SOAP, au lieu de les conserver plus en profondeur dans le réseau.
+        WSDL (Web Services Description Language) : décrit la fonction d'un service web ainsi que ses limites.
+        <br>Lorsqu'une requête de données est envoyée à une API SOAP, elle peut être gérée par n'importe quel protocole de couches de l'application : HTTP (pour les navigateurs web), SMTP (pour les e-mails), TCP et autres. En revanche, suite à la réception de la requête, les messages SOAP doivent être renvoyés sous la forme d'un document XML, un langage balisé lisible aussi bien par les humains que par les machines. Une fois finalisée, une requête destinée à une API SOAP ne peut pas être mise en cache par un navigateur. Il n'est donc pas possible d'y accéder plus tard sans la renvoyer vers l'API.</p>
 
+        <h4>A savoir:</h4>
+
+        <p>
+        JSON: Javascript Object Notation est un format d'échange de données.
+        CORS: Cross-Origin Resource Sharing est un mécanisme qui permet à des ressources restreintes d'une page web d'etre récupérées par un autre domaine exterieur au domaine à partir duquel la première ressource a servie. Le CORS permet de prendre en charge des requetes multi-origines sécurisées et des transfert de données.
+        MIME: Multiporpose Internet Mail Extensions est un standard permettant d'indiquer la nature et le format d'un document.
     </p>
     </section>
     

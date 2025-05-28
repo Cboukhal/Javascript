@@ -787,6 +787,35 @@ function afficherDateHeure(){
 }
 setInterval(afficherDateHeure ,1000);//appel une fonction du temps défini
 
+//------------------------------------les API ------------------------------------//
+document.writeln("<h2>API");
+//1er méthode traditionnelle
+async function testApi() {//async parce que fetch permet de chercher les ressources est une fonction asynchrone
+    let promesse = await fetch('https://jsonplaceholder.typicode.com/users');//appel de l'API avec le fetch qui va chercher les ressources, donc il faut toujours un await car feth n'est pas synchro.
+    // console.log(promesse);//aff le statut de la promesse
+    let reponse = await promesse.json();
+    for (a of reponse){
+        console.log("id: ",a.id);
+        console.log("Prenom nom: ",a.name);
+        console.log("Username: ",a.username);
+        console.log("--------------------");
+    }
+    // console.log(reponse);
+}
+// testApi();
+
+//2éme méthode
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(reponse=>reponse.json())
+    .then(data=>{
+    for (a of data){
+        console.log("id: ",a.id);
+        console.log("Prenom nom: ",a.name);
+        console.log("Username: ",a.username);
+        console.log("--------------------");
+    }
+})
+
 //------------------------------------les Exercices ------------------------------------//
 
 document.write("<h2>Exercice</h2>");
@@ -1586,4 +1615,88 @@ tmoins.addEventListener('click',()=>{
         i = 20;
         texte.style.fontSize = 20 +'px';
     }
+})
+
+//exo 'https://restcountries.com/v3.1/all' cette api fournit la liste de tous les pays du monde avec pleins d'autres info°
+//affich tous les pays avec leurs nom, capitale et population
+//affich les pays qui ont plus de 100millions d'habitant
+//afficher tous les infos de France
+//calculer la population mondiale
+//caluculer la population euro
+//caluculer la population africain
+//caluculer la population américain
+//caluculer la population asiatique
+//aficher dans un tableau html la population mondiale,
+//le nom des continents, sa population et son pourcentage par rapport à la population mondiale
+let monde = [];
+fetch('https://restcountries.com/v3.1/all')
+.then(pays=>pays.json())
+.then(world=>{
+    // for(a of world)
+    // {
+    //     console.log(`Nom: ${a.name.common}`);
+    //     console.log(`Capitale: ${a.capital}`);
+    //     console.log(`Population: ${a.population}`);
+    //     console.log("--------------------");
+    //     // body.innerHTML += (`<br>Nom: ${a.name.common}`);
+    //     // body.innerHTML += (`<br>Capitale: ${a.capital}`);
+    //     // body.innerHTML += (`<br>Population: ${a.population}`);
+    //     // body.innerHTML += ("<br>--------------------");
+
+    // }
+    // console.log("Autre exercice");
+    // console.log("----------------------------------------");
+    // for(a of world){
+    //     if(a.population > 1e8){
+    //         // console.log(`Se pays comporte plus de 100 millions d'habitant : ${a.name.common}`);
+    //         // console.log("--------------------");
+    //         body.innerHTML += (`<br>Se pays comporte plus de 100 millions d'habitant : ${a.name.common}`);
+    //         body.innerHTML +=  ("<br>--------------------");
+    //     }           
+    // }
+    // console.log("Autre exercice")
+    // console.log("----------------------------------------");
+    // for(a of world){
+    //     if (a.name.common == 'France')
+    //     {
+    //     for (b in a)
+    //         console.log(b," : ",a[b]);
+    //     }
+    // }
+    // console.log("----------------------------------------");
+    let euro = 0;
+    let afric = 0;
+    let americ = 0;
+    let asie = 0;
+    let pop = 0;
+    for(a of world){
+        pop = pop + a.population;
+        if(a.continents == 'Africa')
+            afric = afric + a.population;
+        if(a.continents == 'Europe')
+            euro = euro + a.population;
+        if(a.continents == 'Asia')
+            asie = asie + a.population;
+        if(a.continents == 'North America' || a.continents == 'South America'){
+            americ = americ + a.population;
+        }
+    }
+    monde =[["Continent","population","population en pourcentage"],
+        ["Africa",afric,parseInt(afric/pop*100)+"%"],
+        ["Europe",euro,parseInt(euro/pop*100)+"%"],
+        ["Asia",asie,parseInt(asie/pop*100)+"%"],
+        ["America",americ,parseInt(americ/pop*100)+"%"],
+        ["Mondiale",pop,pop*100/pop+"%"]
+    ];
+    const mondiale = document.getElementById('mondiale');
+    let html = "<table border='1'>";
+    for (let row of monde) {
+    html += "<tr>";
+    for (let cell in row) {
+        html += `<td>${row[cell]}</td>`;
+    }
+    html += "</tr>";
+    }
+    html += "</table>";
+    mondiale.innerHTML = html;
 })
